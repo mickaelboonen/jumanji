@@ -1,0 +1,93 @@
+@keyframes apparate {
+  from {
+    opacity: 0;
+    margin-left: 100%;
+    color: #000;
+  }
+  to {
+    opacity: 1;
+    color: #c3ab02;
+    margin-left: 0;
+
+  }
+}
+
+.gameboard {
+  height: 100%;
+  position: relative;
+  background-image: url('https://cdn.discordapp.com/attachments/670557060865196045/706254140686336110/first-gael-plateau.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &__player {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+
+    &--first {
+      background-color: #c3ab02;
+      top: 20px;
+      right: calc( 50% - 10px );
+    }
+
+    &--second {
+      background-color: violet;
+    }
+
+    &--third {
+      background-color: orange;
+      
+    }
+
+    &--fourth {
+      background-color: green;
+      bottom: 30px;
+      right: calc( 50% - 15px );
+      
+    }
+
+    &--fifth {
+      background-color: blue;
+      bottom: 200px;
+      left: 20%;
+    }
+
+    &--sixth {
+      background-color: red;
+      top: 20px;
+      right: calc( 50% - 10px );
+  
+    }
+  }
+
+  &__core {
+    position: absolute;
+    top: calc( 50% - 150px) ;
+    right: calc( 50% - 150px) ;
+    background-image: url('https://images2.imgbox.com/fe/f3/J82a3AQU_o.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-message {
+      width: 130px;
+      height: 130px;
+      color: #c3ab02;
+      animation: 3s 1 alternate apparate;
+    }
+  
+  }
+
+  & img {
+    width: 70%;
+    // max-height: 100%;
+    margin: auto;
+  }
+}

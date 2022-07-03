@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 
 import './style.scss';
 
-const JumanjiText = ({ diceResults }) => (
-  <div>JumanjiText - {diceResults} </div>
+const JumanjiText = ({ diceResults, currentDanger}) => (
+  <div>
+    JumanjiText - {diceResults}
+    <p>{currentDanger.riddle}</p>
+  </div>
 );
 
 JumanjiText.propTypes = {

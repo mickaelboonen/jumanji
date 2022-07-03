@@ -1,0 +1,20 @@
+.dropdown {
+  width: 90%;
+  margin: 0 auto 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  padding: 0.5rem;
+  color: #fff;
+  
+  &__title {
+    text-transform: uppercase;
+  }
+}
+
+.chevron--hidden {
+  display: none;
+}
+
+

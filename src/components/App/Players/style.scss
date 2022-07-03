@@ -1,23 +1,11 @@
-.dice {
+.players {
 
-  &__settings {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
 
     &--closed {
-      display: none;
-    }
-
-    &-button {
-      display: block;
-      margin: auto;
-    }
-
-    &-image {
-      display: block;
-      margin: 1rem auto;
-    }
-
-    &-message {
-      color:  #fff;
+    display: none;
     }
   }
 }
