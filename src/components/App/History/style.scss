@@ -1,4 +1,4 @@
-
+@use 'src/styles/vars';
 
 .history {
 
@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    font-style: vars.$algerian-font;
     align-items: center;
 
     & p {

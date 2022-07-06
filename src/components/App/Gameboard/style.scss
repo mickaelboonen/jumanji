@@ -77,10 +77,16 @@
     justify-content: center;
 
     &-message {
-      width: 130px;
-      height: 130px;
+      width: 140px;
+      height: 140px;
       color: #c3ab02;
+      text-shadow: 1px 1px 1px #000;
       animation: 3s 1 alternate apparate;
+      font-family: 'Algerian', sans-serif;
+      font-size: 0.9em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   
   }

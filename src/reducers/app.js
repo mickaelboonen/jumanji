@@ -16,21 +16,30 @@ const appSlice = createSlice({
     showDiceResults(state, action) {
       state.diceResults = action.payload;
     },
-    setNewFoe: (state, action) => {
-      console.log(state, action);
-      const newFoeIndex = Math.floor(Math.random() * jumanji.length);
-      const newDanger = initialState.dangers[newFoeIndex];
-      const newDangersArray = initialState.dangers.slice(newFoeIndex);
-      console.log(initialState.dangers.length, newDangersArray.length);
+    setNewFoe: (state) => {
+      // Generates a random index from the dangers array in the state
+      const index = Math.floor(Math.random() * state.dangers.length);
 
+      // Gets the new danger associated to the index
+      const newDanger = state.dangers[index];
+      
+      // Returns a new array without the new danger
+      const newDangersArray = state.dangers.map((currentDanger) => {
+        if (currentDanger.beast !== newDanger.beast) {
+          return currentDanger;
+        }
+      });
+      
+      // Returns an array without undefined entries
+      const newDangersFilteredArray = newDangersArray.filter((danger) => danger !== undefined);
 
 
       state.currentDanger = newDanger;
-      state.dangers = newDangersArray;
+      state.dangers = newDangersFilteredArray;
     },
   },
 });
 
-console.log(appSlice.actions, appSlice);
+
 export const { showDiceResults, setNewFoe } = appSlice.actions;
 export default appSlice.reducer;

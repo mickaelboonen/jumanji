@@ -17,6 +17,7 @@ main {
 .header {
   height: 10vh;
   background-color: #353434;
+  background-image: url('/src/assets/images/background.png');
 }
 
 .game {
@@ -26,4 +27,5 @@ main {
 
 .menu {
   width: 30%;
+  background-color: #fff;
 }
