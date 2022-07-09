@@ -3,27 +3,28 @@ import reactLogo from './react-logo.svg';
 import Dice from 'src/containers/App/Dice';
 import DiceResults from 'src/containers/App/DiceResults';
 import './style.scss';
+import History from 'src/containers/App/History';
 import Gameboard from 'src/containers/App/Gameboard';
 import Players from './Players';
 import Rules from './Rules';
-import History from './History';
 
 // == Composant
 const App = () => (
   <div className="app">
     <header className="header">
-      Welcome to Jumanji ! 
+      <h1>Welcome to Jumanji ! </h1>
+      <div />
     </header>
     <main>
       <section className="game">
         <Gameboard />
       </section>
       <section className="menu">
+        <Rules />
         <Players />
         <Dice />
-        <Rules />
+        <History />
       </section>
-      <History />
     </main>
   </div>
 );

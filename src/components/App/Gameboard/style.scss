@@ -1,13 +1,15 @@
 @keyframes apparate {
   from {
     opacity: 0;
-    margin-left: 100%;
-    color: #000;
+    color: #c30202;
   }
   to {
-    opacity: 1;
     color: #c3ab02;
-    margin-left: 0;
+    -webkit-transition: opacity 2s ease-in;
+       -moz-transition: opacity 2s ease-in;
+        -ms-transition: opacity 2s ease-in;
+         -o-transition: opacity 2s ease-in;
+            transition: opacity 2s ease-in;
 
   }
 }
@@ -15,7 +17,7 @@
 .gameboard {
   height: 100%;
   position: relative;
-  background-image: url('https://cdn.discordapp.com/attachments/670557060865196045/706254140686336110/first-gael-plateau.png');
+  background-image: url('/src/assets/images/gameboard.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -64,29 +66,43 @@
 
   &__core {
     position: absolute;
-    top: calc( 50% - 150px) ;
-    right: calc( 50% - 150px) ;
+    top: calc( 50% - 102px) ;
+    right: calc( 50% - 100px) ;
     background-image: url('https://images2.imgbox.com/fe/f3/J82a3AQU_o.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 300px;
-    height: 300px;
+    width: 215px;
+    height: 215px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     &-message {
-      width: 140px;
-      height: 140px;
+      width: 200px;
+      height: 200px;
+      // font-size: 1em;
       color: #c3ab02;
       text-shadow: 1px 1px 1px #000;
-      animation: 3s 1 alternate apparate;
       font-family: 'Algerian', sans-serif;
-      font-size: 0.9em;
+      text-align: center;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      align-items: justify ;
+      transition: 1s;
+      animation: apparate 1s 1;
+
+      & span {
+        width: 100%;
+      }
+    }
+
+    &--new {
+      width: 450px;
+      height: 450px;
+      top: calc( 50% - 225px) ;
+      right: calc( 50% - 225px) ;
+      transition: 1s;
     }
   
   }

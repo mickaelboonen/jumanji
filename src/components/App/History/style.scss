@@ -1,47 +1,18 @@
 @use 'src/styles/vars';
 
+
 .history {
-
-  &__button {
+  &__list {
     height: 100%;
-    width: 2rem;
-    background-color: rgb(199, 199, 199);
-    border-radius: 25px 0 0 25px;
-    border: 2px solid red;
-    border-right: 0;
-    writing-mode: vertical-rl;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-style: vars.$algerian-font;
-    align-items: center;
+    overflow: auto;
+    display: block;
 
-    & p {
-      margin: 2rem 0;
-
-      & span {
-        writing-mode: horizontal-tb;
-        text-transform: uppercase;
-      }
+    & li {
+      margin: 0 0 0.5rem 1rem;
     }
 
-    &--open {
-      position: absolute;
-      inset: 0 0 0 calc(66% - 2rem);
-
-    }
-  }
-
-  &__content {
-    position: absolute;
-    background-color: #141414;
-    height: 100%;
-      border: 2px solid red;
-      border-left: 0;
-
-    &--open { 
-      inset: 0 0 0 66%;
-
+    &--closed {
+    display: none;
     }
   }
 }

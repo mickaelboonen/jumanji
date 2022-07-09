@@ -1,12 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { jumanji } from '../data/jumanjiRiddles';
+import { setNewHistory } from 'src/selectors/reducerFunctions';
 
 const initialState = {
   diceResults: 0,
   name: 'Jumanji',
   currentDanger: {},
   dangers: jumanji,
+  history: [],
+  hasGameBegun: false,
 };
 
 const appSlice = createSlice({
@@ -15,6 +18,10 @@ const appSlice = createSlice({
   reducers: {
     showDiceResults(state, action) {
       state.diceResults = action.payload;
+
+      if (!state.hasGameBegun) {
+        state.hasGameBegun = true;
+      }
     },
     setNewFoe: (state) => {
       // Generates a random index from the dangers array in the state
@@ -33,13 +40,16 @@ const appSlice = createSlice({
       // Returns an array without undefined entries
       const newDangersFilteredArray = newDangersArray.filter((danger) => danger !== undefined);
 
+      const newHistoryArray = setNewHistory(state.history, newDanger);
 
       state.currentDanger = newDanger;
       state.dangers = newDangersFilteredArray;
+      state.history = newHistoryArray
     },
+
   },
 });
 
 
-export const { showDiceResults, setNewFoe } = appSlice.actions;
+export const { showDiceResults, setNewFoe, beginGame } = appSlice.actions;
 export default appSlice.reducer;

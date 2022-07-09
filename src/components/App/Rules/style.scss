@@ -1,0 +1,11 @@
+@use 'src/styles/vars';
+
+
+.rules {
+  &__settings {
+
+    &--closed {
+    display: none;
+    }
+  }
+}

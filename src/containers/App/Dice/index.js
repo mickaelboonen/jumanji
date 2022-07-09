@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Dice from 'src/components/App/Dice';
 
 import { showDiceResults, setNewFoe } from 'src/reducers/app';
+import { setProgression } from 'src/reducers/player';
 
 const mapStateToProps = (state) => ({
   diceResults: state.app.diceResults,
@@ -14,6 +15,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   setNewFoe: () => {
     dispatch(setNewFoe());
+  },
+  setProgression: (progress) => {
+    dispatch(setProgression(progress));
   },
 });
 

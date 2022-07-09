@@ -1,5 +1,4 @@
 body {
-  background-color: #141414;
 }
 
 .app {
@@ -16,16 +15,35 @@ main {
 
 .header {
   height: 10vh;
-  background-color: #353434;
   background-image: url('/src/assets/images/background.png');
+  color: transparent;
+  -webkit-background-clip: text;
+  border-bottom: 1px solid #000;
+
+  & div {
+    height: 1rem;
+    width: 100%;
+    background-color: transparent;
+    -webkit-background-clip: content-box;
+  }
+
+  & h1 {
+
+  text-align: center;
+  margin: auto;
+  font-family: 'Impact';
+  font-size: 6rem;
+  text-transform: uppercase;
+  }
 }
 
 .game {
   width: 70%;
-  background-color: #161616;
+  // background-color: #161616;
 }
 
 .menu {
   width: 30%;
-  background-color: #fff;
+  overflow: auto;
+  // background-color: rgb(160, 108, 108);
 }

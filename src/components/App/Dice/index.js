@@ -5,7 +5,7 @@ import {diceArray} from 'src/data/dice';
 
 import './style.scss';
 
-const Dice = ({ showDiceResults, setNewFoe, diceResults }) => {
+const Dice = ({ showDiceResults, setNewFoe, diceResults, setProgression }) => {
   const throwDice = () => {
 
     const countdown = 0;
@@ -16,8 +16,10 @@ const Dice = ({ showDiceResults, setNewFoe, diceResults }) => {
 
     const firstRandomDice = (Math.floor(Math.random() * 6) + 1);
     const secondtRandomDice = (Math.floor(Math.random() * 6) + 1);
+    const total = firstRandomDice + secondtRandomDice;
 
-    showDiceResults(`${firstRandomDice}${secondtRandomDice}`)
+    showDiceResults(`${firstRandomDice}${secondtRandomDice}`);
+    setProgression(total);
   };
 
   let diceToShow = 0;
