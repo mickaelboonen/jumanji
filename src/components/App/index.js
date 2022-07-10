@@ -1,7 +1,6 @@
 // == Import
 import reactLogo from './react-logo.svg';
 import Dice from 'src/containers/App/Dice';
-import DiceResults from 'src/containers/App/DiceResults';
 import './style.scss';
 import History from 'src/containers/App/History';
 import Gameboard from 'src/containers/App/Gameboard';
@@ -16,6 +15,8 @@ const App = () => (
       <div />
     </header>
     <main>
+      <section className="menu">
+      </section>
       <section className="game">
         <Gameboard />
       </section>

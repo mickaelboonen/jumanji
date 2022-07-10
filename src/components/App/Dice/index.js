@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from '../../Utils/Dropdown';
 import {diceArray} from 'src/data/dice';
+import { setDiceMessageAndForm } from 'src/selectors/toggleClass';
 
 import './style.scss';
 
@@ -20,6 +21,7 @@ const Dice = ({ showDiceResults, setNewFoe, diceResults, setProgression }) => {
 
     showDiceResults(`${firstRandomDice}${secondtRandomDice}`);
     setProgression(total);
+    setDiceMessageAndForm();
   };
 
   let diceToShow = 0;

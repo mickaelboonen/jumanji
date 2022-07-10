@@ -1,0 +1,57 @@
+//@import 'compass'; // for the random() function
+
+$circles: ();
+$move: ();
+
+@for $i from 0 through 15 {
+  $start-x: random(100) * 1vw;
+  $start-y: random(100) * 1vh;
+
+  $end-x: random(150) * 1vw;
+  $end-y: random(150) * 1vh;
+  
+  $circles: append($circles, 
+    radial-gradient(random(100) * 1vw, #fff 0%, #333 50%, #fff, #000, #eee) 
+    $start-x $start-y, 
+  comma);
+  
+  $move: append($move, $end-x $end-y, comma);
+}
+
+.gameboard__waves {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    
+    animation: ouch 7s infinite alternate;
+    background: $circles;
+    background-color: #000;
+    background-blend-mode: difference;
+    transition: 1s;
+    
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+    }
+    
+    &::before {
+      background-image: url('/src/assets/images/message.png');
+      mix-blend-mode: color-burn;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    &::after {}
+
+    &--hidden {
+      top: 100%
+    }
+  }
+  
+  @keyframes ouch {
+    100% {
+      background-position: $move;
+    }
+  }

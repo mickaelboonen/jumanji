@@ -26,9 +26,9 @@ const appSlice = createSlice({
       console.log(action.payload);
 
       const players = state.players.map((currentPlayer) => {
-        console.log(currentPlayer.name, action.payload.name, currentPlayer.name === action.payload.name);
+
         if (currentPlayer.name === action.payload.name) {
-          currentPlayer.progress = action.payload.progress;
+          currentPlayer.progress += action.payload.progress;
         }
         return currentPlayer;
       });
@@ -40,8 +40,11 @@ const appSlice = createSlice({
       const players = state.players.map((currentPlayer) => {
         
         if (currentPlayer.name === state.currentPlayer) {
-          // currentPlayer.progress = action.payload;
-          currentPlayer.progress = 3;
+          currentPlayer.progress += action.payload;
+          if (currentPlayer.progress > 27) {
+            currentPlayer.progress = 27;
+          }
+          
         }
         return currentPlayer;
       });

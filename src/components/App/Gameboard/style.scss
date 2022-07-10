@@ -30,8 +30,8 @@
 
     &--first {
       background-color: #c3ab02;
-      top: 20px;
-      right: calc( 50% - 10px );
+      top: 25px;
+      right: 405px;
     }
 
     &--second {
@@ -68,10 +68,10 @@
     position: absolute;
     top: calc( 50% - 102px) ;
     right: calc( 50% - 100px) ;
-    background-image: url('https://images2.imgbox.com/fe/f3/J82a3AQU_o.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-image: url('https://images2.imgbox.com/fe/f3/J82a3AQU_o.png');
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
     width: 215px;
     height: 215px;
     display: flex;
@@ -107,9 +107,73 @@
   
   }
 
-  & img {
-    width: 70%;
-    // max-height: 100%;
-    margin: auto;
+  &__post-dice {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1rem;
+    transition: 1s;
+
+    &--hidden {
+      top: 150%;
+      display: none;
+
+    }
+
+    &-message {
+      height: 40%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & img {
+        width: 50%;
+        max-height: 100%;
+        margin: auto;
+      }
+
+      &-riddle {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        // font-size: 1em;
+        color: #c3ab02;
+        text-shadow: 1px 1px 1px #000;
+        font-family: 'Algerian', sans-serif;
+        text-align: center;
+        transition: 1s;
+        animation: apparate 1s 1;
+
+        & p {
+          width: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          // height: 200px;
+
+        }
+
+      }
+
+      &-form {
+        background-color: #c30202;
+        width: 60%;
+        margin: auto;
+        padding: 1rem;
+
+        &__input {
+          width: 100%;
+        }
+
+        &__button {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
   }
+
 }
