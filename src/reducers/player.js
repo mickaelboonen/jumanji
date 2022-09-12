@@ -35,7 +35,6 @@ const appSlice = createSlice({
       state.players = players;
     },
     setProgression(state, action) {
-      console.log(action.payload);
 
       const players = state.players.map((currentPlayer) => {
         

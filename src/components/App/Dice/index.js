@@ -9,6 +9,12 @@ import './style.scss';
 const Dice = ({ showDiceResults, setNewFoe, diceResults, setProgression }) => {
   const throwDice = () => {
 
+    const centerElement = document.querySelector('.gameboard__core');
+    const fogElementElement = document.querySelector('.gameboard__core-fog');
+    centerElement.classList.add('gameboard__core--open');
+    fogElementElement.classList.add('gameboard__core-fog--animation');
+
+
     const countdown = 0;
 
     setTimeout(() => {
@@ -22,6 +28,8 @@ const Dice = ({ showDiceResults, setNewFoe, diceResults, setProgression }) => {
     showDiceResults(`${firstRandomDice}${secondtRandomDice}`);
     setProgression(total);
     setDiceMessageAndForm();
+
+
   };
 
   let diceToShow = 0;

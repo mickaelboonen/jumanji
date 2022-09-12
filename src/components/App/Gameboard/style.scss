@@ -1,16 +1,13 @@
 @keyframes apparate {
   from {
     opacity: 0;
-    color: #c30202;
   }
   to {
-    color: #c3ab02;
     -webkit-transition: opacity 2s ease-in;
        -moz-transition: opacity 2s ease-in;
         -ms-transition: opacity 2s ease-in;
          -o-transition: opacity 2s ease-in;
             transition: opacity 2s ease-in;
-
   }
 }
 
@@ -21,6 +18,20 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+
+  &__background {
+    background-image: url('/src/assets/images/second-background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+
+    
+  animation: 2s ease-in 1s 1 both running apparate;
+
+  }
 
   &__player {
     width: 30px;
@@ -68,19 +79,62 @@
     position: absolute;
     top: calc( 50% - 102px) ;
     right: calc( 50% - 100px) ;
-    // background-image: url('https://images2.imgbox.com/fe/f3/J82a3AQU_o.png');
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
+    background-image: url('https://images2.imgbox.com/fe/f3/J82a3AQU_o.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 215px;
     height: 215px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    &--open {
+      transform: scale(2);
+      transition: 5s;
+    }
+
+    &-round {
+      position: absolute;
+      // left: -40px;
+      left: calc( 50% - 40%);
+      background-color: transparent;
+      width: 80%;
+      height: 60%;
+      transform: scale(1.5);
+      // box-shadow: 0 0  15px 15px #f0f;
+      // transform: rotate(-15deg);
+      border-radius: 50%;
+      overflow: hidden;
+      // border: 2px solid red;
+    }
+
+
+    &-fog {
+      &--animation {
+        position: absolute;
+        left: -45px;
+        top: -45px;
+        // background-color: #262626;
+        background-image: url('https://images2.imgbox.com/fe/f3/J82a3AQU_o.png');
+        // margin: auto;    background-position: center;
+      // background-repeat: no-repeat;
+        background-size: cover;
+        width: 180%;
+        height: 180%;
+        border-radius: 50%;
+        // transform: scale(0.50);
+        box-shadow: 0 0  15px 15px #262626;
+        // transform: rotate(-15deg);
+        // animation-delay: 15s;
+        animation:  3s ease-in 2s 1 reverse both running apparate;
+      }
+    }
 
     &-message {
-      width: 200px;
-      height: 200px;
+      transform: scale(0.75);
+      width: 160px;
+      height: 180px;
       // font-size: 1em;
       color: #c3ab02;
       text-shadow: 1px 1px 1px #000;
@@ -89,6 +143,7 @@
       display: flex;
       flex-direction: column;
       align-items: justify ;
+      justify-content: center;
       transition: 1s;
       animation: apparate 1s 1;
 
@@ -159,7 +214,7 @@
       }
 
       &-form {
-        background-color: #c30202;
+        // background-color: #c30202;
         width: 60%;
         margin: auto;
         padding: 1rem;

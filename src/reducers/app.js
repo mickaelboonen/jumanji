@@ -10,6 +10,7 @@ const initialState = {
   dangers: jumanji,
   history: [],
   hasGameBegun: false,
+  guess: '',
 };
 
 const appSlice = createSlice({
@@ -46,10 +47,13 @@ const appSlice = createSlice({
       state.dangers = newDangersFilteredArray;
       state.history = newHistoryArray
     },
+    saveGuess: (state, action) => {
+      state.guess = action.payload;
+    },
 
   },
 });
 
 
-export const { showDiceResults, setNewFoe, beginGame } = appSlice.actions;
+export const { showDiceResults, setNewFoe, beginGame, saveGuess } = appSlice.actions;
 export default appSlice.reducer;
