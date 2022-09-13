@@ -32,10 +32,10 @@ export const setNewPlayerPosition = (player) => {
 }
 
 export const setDiceMessageAndForm = () => {
-  const wavyBackgroundElement = document.querySelector('.gameboard__waves');
-  wavyBackgroundElement.classList.toggle('gameboard__waves--hidden')
-  const resultsElement = document.querySelector('.gameboard__post-dice');
-  resultsElement.classList.toggle('gameboard__post-dice--hidden')
+  // const wavyBackgroundElement = document.querySelector('.gameboard__waves');
+  // wavyBackgroundElement.classList.toggle('gameboard__waves--hidden')
+  // const resultsElement = document.querySelector('.gameboard__post-dice');
+  // resultsElement.classList.toggle('gameboard__post-dice--hidden')
 
 }
 

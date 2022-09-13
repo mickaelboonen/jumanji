@@ -10,7 +10,7 @@ const initialState = {
   dangers: jumanji,
   history: [],
   hasGameBegun: false,
-  guess: '',
+  isDangerOn: false,
 };
 
 const appSlice = createSlice({
@@ -43,17 +43,25 @@ const appSlice = createSlice({
 
       const newHistoryArray = setNewHistory(state.history, newDanger);
 
+      state.isDangerOn = true;
       state.currentDanger = newDanger;
       state.dangers = newDangersFilteredArray;
       state.history = newHistoryArray
     },
-    saveGuess: (state, action) => {
-      state.guess = action.payload;
+    endAppTurn: (state) => {
+      state.currentDanger = {};
+      state.isDangerOn = false;
+
+      
+      const centerElement = document.querySelector('.gameboard__core');
+      const fogElementElement = document.querySelector('.gameboard__core-fog');
+      centerElement.classList.remove('gameboard__core--open');
+      fogElementElement.classList.remove('gameboard__core-fog--animation');
     },
 
   },
 });
 
 
-export const { showDiceResults, setNewFoe, beginGame, saveGuess } = appSlice.actions;
+export const { showDiceResults, setNewFoe, beginGame, endAppTurn } = appSlice.actions;
 export default appSlice.reducer;
