@@ -44,21 +44,4 @@ main {
 }
 
 
-.guess__validator {
-  display: flex;
-  justify-content: space-between;
-  height: 1rem;
-  width: 100%;
-  margin: 0.5rem 0;
-  border: 1px solid #457687;
-    border-radius: 0 5px 5px 0;
-  background-color: #457687 ;
-  
 
-
-  &-gauge {
-    height: 100%;
-    border-radius: 0 5px 5px 0;
-    background-color: #7fc2cf;
-  }
-}

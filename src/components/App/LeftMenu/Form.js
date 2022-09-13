@@ -54,19 +54,20 @@ const Form = () => {
   }
 
   return (
-    <form className="gameboard__post-dice-message-form">
-      <p>Vous êtes attaqués ! Devinez ce qui vous tombe dessus avant la fin du temps imparti pour éviter de vous blesser.</p>
-      <p>Attention ! Certaines créatures sont plus rapides que d'autres. Il vous faudra répondre bien plus rapidement.</p>
+    <form className="gameboard__form">
+      <h4 className="gameboard__form-title">Identifie le danger</h4>
+      <p className="gameboard__form-message">Vous êtes attaqués ! Devinez ce qui vous tombe dessus avant la fin du temps imparti pour éviter de vous blesser.</p>
+      <p className="gameboard__form-message gameboard__form-message--alerte">Attention ! Certaines créatures sont plus rapides que d'autres. Il vous faudra répondre bien plus rapidement.</p>
       <input
         placeholder="Qu'est-ce qui vous attaque ?"
-        className="gameboard__post-dice-message-form__input"
+        className="gameboard__form-input"
         onChange={handleChange}
         // {...register('beast', {
         //   required: "Si vous ne trouvez pas, vous risquez gros.",
         // })}
       />
-      <div className='guess__validator'>
-        <div className='guess__validator-gauge' style={{width: `${matchPercent}%`}}></div>
+      <div className='gameboard__form-validator'>
+        <div className='gameboard__form-validator-gauge' style={{width: `${matchPercent}%`}}></div>
       </div>
       <div className="gameboard__post-dice-message-form__button">
         {hasFound && (
