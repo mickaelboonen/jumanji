@@ -69,17 +69,16 @@ const Form = () => {
       <div className='gameboard__form-validator'>
         <div className='gameboard__form-validator-gauge' style={{width: `${matchPercent}%`}}></div>
       </div>
-      <div className="gameboard__post-dice-message-form__button">
-        {hasFound && (
-          <button
-            id="beast-button"
-            type="button"
-            onClick={handleClick}
-          >
-            Suivant
-          </button>
-        )}
-      </div>
+      {hasFound && (
+        <button
+          id="beast-button"
+          type="button"
+          className="gameboard__form-button"
+          onClick={handleClick}
+        >
+          Suivant
+        </button>
+      )}
     </form>
   );
 };

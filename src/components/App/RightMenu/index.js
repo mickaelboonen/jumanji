@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import Dice from 'src/containers/App/Dice';
+import History from 'src/containers/App/History';
+import Players from '../Players';
+import Rules from '../Rules';
+
 
 import './style.scss';
-import Form from './Form';
 
-const LeftMenu = () => {
-  
-  
+const RightMenu = () => {
   // State
   const {
     isDangerOn,
@@ -18,14 +20,16 @@ const LeftMenu = () => {
   
   return (
     <section className="menu">
-      {isDangerOn && (<Form />)}
-      {!isDangerOn && <p>Hey</p>}
-    </section>
+      <Rules />
+      <Players />
+      <Dice />
+      <History />
+  </section>
   );
 };
 
-LeftMenu.propTypes = {
+RightMenu.propTypes = {
 
 };
 
-export default LeftMenu;
+export default RightMenu;

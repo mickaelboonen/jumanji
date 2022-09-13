@@ -8,6 +8,7 @@ import Rules from './Rules';
 
 import './style.scss';
 import LeftMenu from './LeftMenu';
+import RightMenu from './RightMenu';
 
 // == Composant
 const App = () => (
@@ -17,18 +18,11 @@ const App = () => (
       <div />
     </header>
     <main>
-      <section className="menu">
-        <LeftMenu />
-      </section>
+      <LeftMenu />
       <section className="game">
         <Gameboard />
       </section>
-      <section className="menu">
-        <Rules />
-        <Players />
-        <Dice />
-        <History />
-      </section>
+      <RightMenu />
     </main>
   </div>
 );
